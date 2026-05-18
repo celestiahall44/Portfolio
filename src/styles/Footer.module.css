@@ -1,0 +1,21 @@
+.footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 2rem;
+  margin-top: auto;
+}
+
+.socials {
+  margin-bottom: 1rem;
+}
+
+.icon {
+  display: inline-block;
+  margin: 0 0.5rem;
+  color: #fff;
+  transition: color 0.2s;
+}
+.icon:hover {
+  color: #1da1f2;
+}
