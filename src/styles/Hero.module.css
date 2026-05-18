@@ -91,6 +91,7 @@
     z-index: 2101;
     transform: translate(-50%, -50%) scale(0.5);
     animation: fireworkShockwaveExpand 0.7s cubic-bezier(0.23,1.12,0.32,1) forwards;
+    will-change: opacity, transform;
   }
 
   @keyframes fireworkShockwaveExpand {
@@ -180,26 +181,23 @@
     60% { opacity: 0.7; }
     100% { opacity: 0; }
   }
-
-  .fireworkParticle {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: var(--fw-size, 12px);
-    height: var(--fw-size, 12px);
-    background: radial-gradient(circle at 60% 40%, #fff 40%, var(--fw-color, #fff) 80%, transparent 100%);
-    border-radius: 50%;
-    opacity: 0;
-    pointer-events: none;
-    box-shadow:
-      0 0 24px 8px var(--fw-color, #fff),
-      0 0 48px 16px #fff8,
-      0 0 0 2px #fff8 inset;
-    transform: translate(-50%, -50%) scale(0.5) rotate(var(--fw-angle, 0deg));
-    z-index: 2000;
-    animation: fireworkExplode var(--fw-duration, 1.2s) linear forwards;
-    animation-delay: 0s;
-  }
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--fw-size, 12px);
+  height: var(--fw-size, 12px);
+  background: radial-gradient(circle at 60% 40%, #fff 40%, var(--fw-color, #fff) 80%, transparent 100%);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow:
+    0 0 24px 8px var(--fw-color, #fff),
+    0 0 48px 16px #fff8,
+    0 0 0 2px #fff8 inset;
+  transform: translate(-50%, -50%) scale(0.5) rotate(var(--fw-angle, 0deg));
+  z-index: 2000;
+  animation: fireworkExplode var(--fw-duration, 1.2s) linear forwards;
+  animation-delay: 0s;
 
 
 @keyframes fireworkExplode {
