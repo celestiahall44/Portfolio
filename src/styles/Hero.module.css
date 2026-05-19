@@ -229,7 +229,7 @@
 }
 .hero {
   position: relative;
-  padding: 4rem 2rem 2rem 2rem;
+  padding: 8rem 2rem 6rem 2rem;
   background:
     linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
     url('../assets/galaxy.jpg') center/cover no-repeat;
@@ -277,6 +277,7 @@
   97% { opacity: 1; }
   100% { opacity: 0; }
 }
+/* Sparkle effect for bubbles */
 .sparkle {
   position: absolute;
   top: 18%;
@@ -340,60 +341,19 @@
   z-index: 2;
 }
 
-.hero-gradient-border {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -1px;
-  height: 160px;
-  background: linear-gradient(
-    to bottom,
-    #091a27 0%,
-    rgba(26,42,54,0.85) 20%,
-    rgba(26,42,54,0.5) 55%,
-    rgba(255,255,255,0.15) 85%,
-    rgba(255,255,255,0.04) 96%,
-    rgba(255,255,255,0) 100%
-  );
-  pointer-events: none;
-  z-index: 2;
-}
-.photo {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-.hero h2 {
-  margin-bottom: 1rem;
-  font-size: 2.5rem;
-  color: #11355f;
-}
-.hero p {
-  font-size: 1.25rem;
-  color: #1b4575;
-}
-
-.tagline {
-  margin-bottom: 2rem;
-  font-size: 1.5rem;
-  color: #1b4575;
-}
-
-.contactBtn {
-  display: inline-block;
-  padding: 0.75rem 2rem;
-  background: #222;
-  color: #fff !important;
-  border-radius: 24px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1rem;
-  transition: background 0.2s;
-}
-.contactBtn:hover {
-  background: #444;
-  color: #fff !important;
-}
+  .hero-gradient-border {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -1px;
+    height: 160px;
+    background: linear-gradient(
+      to bottom,
+      #091a27 0%,
+      rgba(26,42,54,0.85) 20%,
+      rgba(26,42,54,0.5) 55%,
+      rgba(255,255,255,0.15) 85%,
+      rgba(255,255,255,0.04) 96%,
+      rgba(255,255,255,0) 100%
+    );
+  }

@@ -1,3 +1,60 @@
+  .skillsSection {
+    width: 100%;
+  }
+  .skillsSection h3 {
+    text-align: center;
+    width: 100%;
+  }
+  .skills {
+    justify-content: center;
+  }
+  text-align: center;
+  width: 100%;
+.aboutText p {
+  background: rgba(0, 30, 60, 0.85);
+  color: #fff;
+  padding: 1.25rem 2rem;
+  border-radius: 18px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.18);
+}
+.about p {
+  color: #fff;
+}
+.about p {
+  color: #fff;
+}
+.aboutContent {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  width: 100%;
+  justify-content: center;
+  align-items: stretch;
+}
+
+@media (min-width: 700px) {
+  .aboutContent {
+    flex-direction: row;
+    gap: 10rem;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .aboutText, .skillsSection {
+    flex: 1 1 0;
+    max-width: 420px;
+  }
+}
+
+.aboutText {
+  margin-bottom: 1.5rem;
+}
+
+.skillsSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 .sparkle {
   position: absolute;
   top: 18%;
@@ -33,6 +90,7 @@
   margin: 0;
   position: relative;
   /* overflow: hidden removed to allow bubbles to float into Hero section */
+  font-size: 1.35rem;
 }
 
 .bubbles {
@@ -70,21 +128,41 @@
     opacity: 0.7;
   }
   100% {
-    transform: translateY(-100vh) scale(1.2);
+    transform: translateY(-80vh) scale(1.2);
     opacity: 0;
   }
 }
 
-.about, .about h2, .about h3, .about p, .about li {
+
+
+.about h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
   color: #fff;
   text-shadow: 0 2px 8px rgba(0,0,0,0.25);
 }
-@media (min-width: 700px) {
-  .about {
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-  }
+
+.about h3 {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+.aboutText h2 {
+  text-align: center;
+  width: 100%;
+}
+
+.aboutText p {
+  background: rgba(0, 30, 60, 0.85);
+  color: #fff;
+  padding: 1.25rem 2rem;
+  border-radius: 18px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.18);
+  text-align: left;
 }
 .about {
 }
@@ -92,6 +170,9 @@
 
 .info {
   max-width: 500px;
+}
+.skillsSection, .skills {
+  font-size: 1.35rem;
 }
 .skills {
   display: flex;
@@ -106,6 +187,6 @@
   color: #fff;
   padding: 0.5rem 1.25rem;
   border-radius: 20px;
-  font-size: 1rem;
+  font-size: 1em;
   font-weight: 500;
 }
