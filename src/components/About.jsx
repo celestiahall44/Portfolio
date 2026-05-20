@@ -13,11 +13,17 @@ export default function About({ children }) {
         <div className={styles.skillsSection}>
           <h3>Skills</h3>
           <ul className={styles.skills}>
-            <li>JavaScript (ES6+)</li>
             <li>React</li>
-            <li>HTML & CSS</li>
+            <li>Next.js</li>
+            <li>Firebase</li>
+            <li>Vercel</li>
+            <li>Tailwind CSS</li>
+            <li>Styled Components</li>
             <li>Node.js</li>
-            <li>Git & GitHub</li>
+            <li>TMDB API</li>
+            <li>NLP</li>
+            <li>JavaScript (ES6+)</li>
+            <li>HTML &amp; CSS</li>
           </ul>
         </div>
       </div>
