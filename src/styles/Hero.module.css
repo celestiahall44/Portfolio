@@ -204,20 +204,7 @@
     80% { opacity: 0.5; }
     100% { opacity: 0; }
   }
-  .fireworkCore {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 32px;
-    height: 32px;
-    background: radial-gradient(circle, #fff 80%, #fffa 100%, transparent 100%);
-    border-radius: 50%;
-    opacity: 0;
-    pointer-events: none;
-    z-index: 2100;
-    transform: translate(-50%, -50%);
-    animation: fireworkCoreFlash 0.5s linear forwards;
-  }
+  /* Removed duplicate .fireworkCore block to fix unclosed block error */
 
   @keyframes fireworkCoreFlash {
     0% { opacity: 0; }
@@ -232,14 +219,20 @@
     top: 50%;
     width: 32px;
     height: 32px;
-    background: radial-gradient(circle, #fff 60%, #fffa 90%, transparent 100%);
+     background: radial-gradient(circle at 60% 40%, #fff 30%, var(--fw-color, #fff) 60%, #fff700 80%, #00eaff 90%, #a259ff 100%, transparent 100%);
     border-radius: 50%;
     opacity: 0;
     pointer-events: none;
     z-index: 2100;
     transform: translate(-50%, -50%);
     animation: fireworkCoreFlash 1.2s linear forwards;
-  }
+     box-shadow:
+      0 0 32px 8px var(--fw-color, #fff),
+      0 0 64px 24px #fff700cc,
+      0 0 96px 32px #00eaffcc,
+      0 0 128px 48px #a259ffcc,
+      0 0 128px 64px #fff8;
+    }
 
   @keyframes fireworkCoreFlash {
     0% { opacity: 0; }
@@ -247,23 +240,6 @@
     60% { opacity: 0.7; }
     100% { opacity: 0; }
   }
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: var(--fw-size, 12px);
-  height: var(--fw-size, 12px);
-  background: radial-gradient(circle at 60% 40%, #fff 40%, var(--fw-color, #fff) 80%, transparent 100%);
-  border-radius: 50%;
-  opacity: 0;
-  pointer-events: none;
-  box-shadow:
-    0 0 24px 8px var(--fw-color, #fff),
-    0 0 48px 16px #fff8,
-    0 0 0 2px #fff8 inset;
-  transform: translate(-50%, -50%) scale(0.5) rotate(var(--fw-angle, 0deg));
-  z-index: 2000;
-  animation: fireworkExplode var(--fw-duration, 1.2s) linear forwards;
-  animation-delay: 0s;
 
 
 @keyframes fireworkExplode {
@@ -319,7 +295,7 @@
   background: radial-gradient(circle at 65% 35%, rgba(255,255,255,0.95) 35%, rgba(180,220,255,0.25) 80%, rgba(255,255,255,0.01) 100%);
   border-radius: 50%;
   opacity: 0.92;
-  animation: bubbleUp linear infinite;
+  animation: bubbleUp linear infinite, bubblePopColor 2.8s linear infinite;
   box-shadow:
     0 2px 12px 0 rgba(180,220,255,0.22),
     0 0 0 2px rgba(255,255,255,0.18) inset,
@@ -331,11 +307,49 @@
 }
 
 .bubble {
-  /* Hide bubble at pop moment (last 10% of animation) */
-  animation-name: bubbleUp, bubbleHideAtPop;
-  animation-duration: inherit, inherit;
-  animation-timing-function: linear, linear;
-  animation-iteration-count: infinite, infinite;
+  /* Hide bubble at pop moment (last 10% of animation) and add color pop */
+  animation-name: bubbleUp, bubbleHideAtPop, bubblePopColor;
+  animation-duration: inherit, inherit, inherit;
+  animation-timing-function: linear, linear, linear;
+  animation-iteration-count: infinite, infinite, infinite;
+@keyframes bubblePopColor {
+  0%, 85% {
+    filter: none;
+    background: radial-gradient(circle at 65% 35%, rgba(255,255,255,0.95) 35%, rgba(180,220,255,0.25) 80%, rgba(255,255,255,0.01) 100%);
+    box-shadow:
+      0 2px 12px 0 rgba(180,220,255,0.22),
+      0 0 0 2px rgba(255,255,255,0.18) inset,
+      0 0 8px 2px rgba(255,255,255,0.12) inset;
+    border-color: rgba(255,255,255,0.22);
+  }
+  90% {
+    filter: brightness(1.5) blur(1.5px);
+    background: radial-gradient(circle at 65% 35%, #ffb347 35%, #ff5e62 80%, #fff 100%);
+    box-shadow:
+      0 0 32px 8px #ff5e62cc,
+      0 0 0 4px #ffb34799 inset,
+      0 0 24px 8px #fff8 inset;
+    border-color: #ff5e62;
+  }
+  95% {
+    filter: brightness(2) blur(2.5px);
+    background: radial-gradient(circle at 65% 35%, #43e97b 35%, #38f9d7 80%, #fff 100%);
+    box-shadow:
+      0 0 48px 16px #38f9d7cc,
+      0 0 0 6px #43e97b99 inset,
+      0 0 32px 12px #fff8 inset;
+    border-color: #43e97b;
+  }
+  100% {
+    filter: brightness(2.5) blur(3.5px);
+    background: radial-gradient(circle at 65% 35%, #a259ff 35%, #00eaff 80%, #fff 100%);
+    box-shadow:
+      0 0 64px 24px #a259ffcc,
+      0 0 0 8px #00eaff99 inset,
+      0 0 40px 16px #fff8 inset;
+    border-color: #a259ff;
+  }
+}
 }
 
 @keyframes bubbleHideAtPop {
