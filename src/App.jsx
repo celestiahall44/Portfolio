@@ -11,9 +11,9 @@ import heroStyles from './styles/Hero.module.css';
 export default function App() {
   // Firework pop colors for dramatic effect
   const popColors = [
-    '#ff5e62', // red-pink
-    '#43e97b', // green
-    '#a259ff', // purple
+    '#52c42f', // lime
+    'rgb(30, 236, 167)', // green
+    '#ee45d7', // purple
     '#00eaff', // blue
     '#ffb347', // orange
     '#38f9d7', // teal
@@ -70,12 +70,17 @@ export default function App() {
           {[...Array(12)].map((_, i) => {
             const duration = 12 + (i % 4) * 4;
             const color = popColors[i % popColors.length];
+            // Only position bubbles on left (8-38%) and right (62-92%) sides
+            const isLeft = i < 6;
+            const left = isLeft
+              ? 8 + i * 6 // 8%, 14%, 20%, 26%, 32%, 38%
+              : 62 + (i - 6) * 6; // 62%, 68%, 74%, 80%, 86%, 92%
             return (
               <div
                 key={i}
                 className={heroStyles.bubble}
                 style={{
-                  left: `${8 + i * 7}%`,
+                  left: `${left}%`,
                   animationDelay: `${i * 1.2}s`,
                   animationDuration: `${duration}s`,
                   width: `${12 + (i % 3) * 8}px`,
