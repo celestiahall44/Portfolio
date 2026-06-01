@@ -1,8 +1,10 @@
- h2 {
+ .modal h2 {
    margin-bottom: 0.7rem;
    font-size: 2rem;
    font-weight: 800;
    letter-spacing: 0.08em;
+  text-align: center;
+  width: 100%;
  }
 .overlay {
   position: fixed;
@@ -22,11 +24,27 @@
   min-width: 320px;
   max-width: 90vw;
   position: relative;
-  animation: modalPop 0.25s cubic-bezier(.7,-0.2,.4,1.4);
+  animation: modalBounceIn 0.7s cubic-bezier(0.22, 1.15, 0.36, 1) both;
 }
-@keyframes modalPop {
-  0% { transform: scale(0.85); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
+@keyframes modalBounceIn {
+  0% {
+    opacity: 0;
+    transform: translateY(42px) scale(0.78);
+  }
+  55% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.03);
+  }
+  75% {
+    transform: translateY(5px) scale(0.99);
+  }
+  90% {
+    transform: translateY(-2px) scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 .close {
   position: absolute;
@@ -34,7 +52,7 @@
   right: 1.3rem;
   background: none;
   border: none;
-  color: #fff;
+  color: #181c24;
   font-size: 2rem;
   cursor: pointer;
   opacity: 0.7;
@@ -50,7 +68,7 @@
   margin-top: 1.2rem;
   align-items: center;
 }
-label {
+.modal label {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -58,21 +76,44 @@ label {
   font-size: 1.08rem;
   color: #181c24;
 }
-input, textarea {
+.modal input,
+.modal textarea {
   width: 90%;
   margin-top: 0.3rem;
   padding: 0.7rem 1rem;
   border-radius: 8px;
   border: 1.5px solid #bfc8d6;
   background: #f7faff;
-  color: #181c24;
+  color: #050b14 !important;
+  font-family: inherit;
   font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
   resize: none;
   text-align: center;
+  caret-color: #050b14;
+  -webkit-text-fill-color: #050b14;
 }
-input:focus, textarea:focus {
+.modal input:focus,
+.modal textarea:focus {
   outline: 2px solid #00eaff;
   border-color: #00eaff;
+}
+.modal input::placeholder,
+.modal textarea::placeholder {
+  color: #516070;
+  opacity: 1;
+}
+.modal input:-webkit-autofill,
+.modal input:-webkit-autofill:hover,
+.modal input:-webkit-autofill:focus,
+.modal textarea:-webkit-autofill,
+.modal textarea:-webkit-autofill:hover,
+.modal textarea:-webkit-autofill:focus {
+  -webkit-text-fill-color: #050b14 !important;
+  caret-color: #050b14;
+  box-shadow: 0 0 0px 1000px #f7faff inset;
+  transition: background-color 9999s ease-out 0s;
 }
 .submit {
   margin-top: 0.7rem;
@@ -88,7 +129,56 @@ input:focus, textarea:focus {
   transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
 }
 .submit:hover {
-  background: linear-gradient(90deg, #a259ff 0%, #00eaff 100%);
+  background: linear-gradient(90deg, #00eaff 0%, #a259ff 100%);
+  color: #fff;
   box-shadow: 0 0 24px 4px #00eaff44, 0 2px 12px #a259ff33;
+  filter: none;
   transform: scale(1.06);
+}
+
+@media (max-width: 640px) {
+  .overlay {
+    padding: 0.75rem;
+  }
+
+  .modal {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    border-radius: 14px;
+    padding: 1.25rem 0.95rem 1.1rem 0.95rem;
+  }
+
+  .modal h2 {
+    font-size: 1.45rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .close {
+    top: 0.6rem;
+    right: 0.8rem;
+    font-size: 1.6rem;
+  }
+
+  .form {
+    margin-top: 0.85rem;
+    gap: 0.8rem;
+  }
+
+  .modal label {
+    font-size: 0.95rem;
+  }
+
+  .modal input,
+  .modal textarea {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 0.58rem 0.75rem;
+  }
+
+  .submit {
+    width: 100%;
+    font-size: 0.98rem;
+    padding: 0.62rem 1rem;
+  }
 }

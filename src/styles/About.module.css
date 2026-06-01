@@ -48,12 +48,66 @@
 
 .aboutText {
   margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(-90px) scale(0.9) rotate(-2deg);
 }
 
 .skillsSection {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  opacity: 0;
+  transform: translateY(90px) scale(0.9) rotate(2deg);
+}
+
+.aboutTextVisible {
+  animation: aboutDropIn 1.15s cubic-bezier(0.16, 1, 0.3, 1.2) forwards;
+}
+
+.skillsSectionVisible {
+  animation: skillsRiseIn 1.15s cubic-bezier(0.16, 1, 0.3, 1.2) forwards;
+}
+
+@keyframes aboutDropIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-90px) scale(0.9) rotate(-2deg);
+    filter: blur(5px);
+  }
+  62% {
+    opacity: 1;
+    transform: translateY(14px) scale(1.03) rotate(1deg);
+    filter: blur(0);
+  }
+  82% {
+    transform: translateY(-6px) scale(0.99) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes skillsRiseIn {
+  0% {
+    opacity: 0;
+    transform: translateY(90px) scale(0.9) rotate(2deg);
+    filter: blur(5px);
+  }
+  62% {
+    opacity: 1;
+    transform: translateY(-14px) scale(1.03) rotate(-1deg);
+    filter: blur(0);
+  }
+  82% {
+    transform: translateY(6px) scale(0.99) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
 }
 .sparkle {
   position: absolute;
@@ -189,4 +243,72 @@
   border-radius: 20px;
   font-size: 1em;
   font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .about {
+    padding: 2.2rem 1.25rem;
+    font-size: 1.15rem;
+  }
+
+  .aboutContent {
+    gap: 2.4rem;
+  }
+
+  .about h2 {
+    font-size: 1.9rem;
+  }
+
+  .about h3 {
+    font-size: 1.35rem;
+  }
+
+  .aboutText p {
+    padding: 1rem 1.2rem;
+  }
+
+  .skillsSection,
+  .skills {
+    font-size: 1.08rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .about {
+    padding: 1.7rem 0.9rem;
+    font-size: 1rem;
+  }
+
+  .aboutContent {
+    gap: 1.7rem;
+  }
+
+  .aboutText,
+  .skillsSection {
+    transform: none;
+  }
+
+  .about h2 {
+    font-size: 1.6rem;
+  }
+
+  .about h3 {
+    font-size: 1.2rem;
+  }
+
+  .aboutText p {
+    padding: 0.85rem 1rem;
+    font-size: 0.98rem;
+    margin-bottom: 1rem;
+  }
+
+  .skills {
+    gap: 0.5rem 0.65rem;
+  }
+
+  .skills li {
+    padding: 0.38rem 0.8rem;
+    font-size: 0.88rem;
+    border-radius: 14px;
+  }
 }

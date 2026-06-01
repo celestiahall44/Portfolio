@@ -1,5 +1,5 @@
 .footer {
-  background: #222;
+  background: linear-gradient(180deg, #171717 0%, #050505 100%);
   color: #fff;
   text-align: center;
   padding: 1.5rem 2rem;
@@ -7,18 +7,108 @@
   position: relative;
   z-index: 1;
   font-size: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 -10px 32px rgba(0, 0, 0, 0.18);
+}
+
+.footer::before {
+  content: none;
 }
 
 .socials {
   margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 .icon {
   display: inline-block;
   margin: 0 0.5rem;
   color: #fff;
-  transition: color 0.2s;
+  transition: color 0.2s, filter 0.2s, transform 0.2s;
+  opacity: 0;
+  transform: translateX(22px);
 }
+
+.iconAnimate {
+  animation: iconSlideInRight 0.65s ease-out forwards;
+}
+
 .icon:hover {
-  color: #1da1f2;
+  color: #fff;
+  transform: translateY(-2px) scale(1.04);
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.55)) drop-shadow(0 0 16px rgba(255, 255, 255, 0.25));
+}
+
+.iconAnimate:nth-child(1) {
+  animation-delay: 0.08s;
+}
+
+.iconAnimate:nth-child(2) {
+  animation-delay: 0.18s;
+}
+
+.iconAnimate:nth-child(3) {
+  animation-delay: 0.28s;
+}
+
+.copy {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.copyAnimate {
+  animation: copyRiseUp 0.65s 0.2s ease-out forwards;
+}
+
+@keyframes iconSlideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(22px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes copyRiseUp {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 700px) {
+  .footer {
+    padding: 1.15rem 1rem;
+    font-size: 1.2rem;
+  }
+
+  .socials {
+    margin-bottom: 0.75rem;
+  }
+
+  .icon {
+    margin: 0 0.4rem;
+  }
+
+  .icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .copy {
+    font-size: 0.86rem;
+    letter-spacing: 0.04em;
+  }
 }

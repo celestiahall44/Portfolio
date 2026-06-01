@@ -1,9 +1,6 @@
-import React, { useState } from 'react';
 import styles from '../styles/Hero.module.css';
-import ContactModal from './ContactModal';
 
-export default function Hero() {
-  const [modalOpen, setModalOpen] = useState(false);
+export default function Hero({ onContactClick }) {
   return (
     <section className={styles.hero}>
       <div className={styles['hero-gradient-border']} />
@@ -14,12 +11,11 @@ export default function Hero() {
         className={styles.contactBtn}
         onClick={e => {
           e.preventDefault();
-          setModalOpen(true);
+          onContactClick?.();
         }}
       >
         Contact Me
       </a>
-      <ContactModal open={modalOpen} onClose={() => setModalOpen(false)} />
       <div className={styles['hero-gradient-border-bottom']} />
     </section>
   );

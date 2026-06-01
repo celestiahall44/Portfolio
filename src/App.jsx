@@ -1,6 +1,9 @@
 import React, { useRef, useState, useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import ContactModal from './components/ContactModal';
 import About from './components/About';
 import ProjectsGrid from './components/ProjectsGrid';
 import Footer from './components/Footer';
@@ -20,6 +23,7 @@ export default function App() {
   ];
   // Track which bubbles are popping
   const [popping, setPopping] = useState(Array(12).fill(false));
+  const [contactModalOpen, setContactModalOpen] = useState(false);
   const intervals = useRef([]);
 
   useEffect(() => {
@@ -61,10 +65,20 @@ export default function App() {
     };
   }, []);
 
+  useEffect(() => {
+    AOS.init({
+      duration: 900,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 80,
+    });
+  }, []);
+
   return (
     <div className={styles.container} style={{ position: 'relative', overflow: 'hidden' }}>
-      <Header />
-      <Hero />
+      <Header onContactClick={() => setContactModalOpen(true)} />
+      <Hero onContactClick={() => setContactModalOpen(true)} />
+      <ContactModal open={contactModalOpen} onClose={() => setContactModalOpen(false)} />
       <About>
         <div className={heroStyles.bubbles}>
           {[...Array(12)].map((_, i) => {
