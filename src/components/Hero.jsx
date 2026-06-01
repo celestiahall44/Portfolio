@@ -1,10 +1,11 @@
 import styles from '../styles/Hero.module.css';
+import profileImage from '../assets/profile-photo.jpg';
 
 export default function Hero({ onContactClick }) {
   return (
     <section className={styles.hero}>
       <div className={styles['hero-gradient-border']} />
-      <img src="/src/assets/Profile.JPG" alt="Celestia" className={styles.photo} />
+      <img src={profileImage} alt="Celestia" className={styles.photo} />
       <p className={styles.tagline}>Building creative web experiences.</p>
       <a
         href="#contact"
