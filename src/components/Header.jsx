@@ -40,7 +40,7 @@ export default function Header({ onContactClick }) {
         >
           Projects
         </a>
-        <a className={`${styles.navLink} ${isVisible ? styles.navLinkVisible : ''}`} href="/resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+        <a className={`${styles.navLink} ${isVisible ? styles.navLinkVisible : ''}`} href="/celestia_hall_resume.pdf" target="_blank" rel="noreferrer">Resume</a>
         <a
           className={`${styles.navLink} ${isVisible ? styles.navLinkVisible : ''}`}
           href="#contact"

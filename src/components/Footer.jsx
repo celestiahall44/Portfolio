@@ -32,7 +32,7 @@ export default function Footer() {
         <a href="https://www.linkedin.com/in/celestia-hall-234795195/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className={`${styles.icon} ${animateIn ? styles.iconAnimate : ''}`}>
           <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 10.28h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39v4.58h-3v-9h2.89v1.23h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.59v4.74z"/></svg>
         </a>
-        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume" className={`${styles.icon} ${animateIn ? styles.iconAnimate : ''}`}>
+        <a href="/celestia_hall_resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume" className={`${styles.icon} ${animateIn ? styles.iconAnimate : ''}`}>
           <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm7 1.5V9h5.5L13 3.5zM6 20V4h6v5a2 2 0 0 0 2 2h5v9a2 2 0 0 1-2 2H6zm2-7h8v2H8v-2zm0 4h8v2H8v-2z"/></svg>
         </a>
       </div>
