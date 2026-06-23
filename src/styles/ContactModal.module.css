@@ -21,6 +21,7 @@
   border-radius: 18px;
   box-shadow: 0 8px 32px #000a, 0 2px 8px #00eaff44;
   padding: 2.5rem 2.2rem 2rem 2.2rem;
+  width: min(700px, 92vw);
   min-width: 320px;
   max-width: 90vw;
   position: relative;
