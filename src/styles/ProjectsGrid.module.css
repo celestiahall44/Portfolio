@@ -115,7 +115,6 @@
 .imageWrap {
   position: relative;
   width: 100%;
-  max-width: 320px;
   height: 180px;
   margin-bottom: 1.2rem;
   border-radius: 12px;
