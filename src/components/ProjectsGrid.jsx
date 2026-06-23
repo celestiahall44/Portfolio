@@ -8,12 +8,14 @@ import { ultraverseProject } from '../data/ultraverseProject';
 import { summaristProject } from '../data/summaristProject';
 import { netflixCloneProject } from '../data/netflixCloneProject';
 import { flixReactProject } from '../data/flixReactProject';
+import { skintristicProject } from '../data/skintristicProject';
 
 const projects = [
   netflixCloneProject,
   summaristProject,
   ultraverseProject,
   flixReactProject,
+  skintristicProject,
 ];
 
 const getRequiredVisibilityRatio = () => {
