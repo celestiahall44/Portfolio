@@ -14,7 +14,7 @@ const projects = [
   summaristProject,
   ultraverseProject,
   flixReactProject,
-  { ...flixReactProject, title: 'Skintristic', description: 'An AI-powered skincare experience focused on helping users discover routines and products with a clean, modern interface, personalized recommendations, and a smooth end-to-end user journey.' },
+  { ...flixReactProject, title: 'Skintristic', description: 'An AI-powered skincare experience focused on helping users discover routines and products with a clean, modern interface, personalized recommendations, and a smooth end-to-end user journey.', tech: ['React', 'Next.js', 'Tailwind CSS', 'Vercel'], link: 'https://skintristic.vercel.app/' },
 ];
 
 const projectImageStyle = {
