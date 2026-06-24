@@ -14,7 +14,7 @@ const projects = [
   summaristProject,
   ultraverseProject,
   flixReactProject,
-  { ...flixReactProject, title: 'Skintristic' },
+  { ...flixReactProject, title: 'Skintristic', description: 'An AI-powered skincare experience focused on helping users discover routines and products with a clean, modern interface, personalized recommendations, and a smooth end-to-end user journey.' },
 ];
 
 const projectImageStyle = {
