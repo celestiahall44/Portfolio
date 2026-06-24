@@ -8,15 +8,20 @@ import { ultraverseProject } from '../data/ultraverseProject';
 import { summaristProject } from '../data/summaristProject';
 import { netflixCloneProject } from '../data/netflixCloneProject';
 import { flixReactProject } from '../data/flixReactProject';
-import { skintristicProject } from '../data/skintristicProject';
 
 const projects = [
   netflixCloneProject,
   summaristProject,
   ultraverseProject,
   flixReactProject,
-  skintristicProject,
 ];
+
+const projectImageStyle = {
+  objectFit: 'contain',
+  objectPosition: 'center center',
+  borderRadius: 12,
+  background: '#0f1722',
+};
 
 const getRequiredVisibilityRatio = () => {
   if (window.innerWidth <= 560) return 0.22;
@@ -99,13 +104,7 @@ export default function ProjectsGrid() {
                   src={project.image}
                   alt={project.title}
                   className={styles.image}
-                  style={
-                    project.title === 'Netflix Clone'
-                      ? { objectFit: 'cover', borderRadius: 12 }
-                      : project.title === 'Summarist Advanced Internship'
-                        ? { objectFit: 'contain', borderRadius: 12, background: '#fff' }
-                        : {}
-                  }
+                  style={projectImageStyle}
                 />
                 <div className={styles.imageOverlay} />
               </div>
