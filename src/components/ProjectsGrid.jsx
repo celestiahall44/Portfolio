@@ -14,6 +14,7 @@ const projects = [
   summaristProject,
   ultraverseProject,
   flixReactProject,
+  { ...flixReactProject, title: 'Skintristic' },
 ];
 
 const projectImageStyle = {
