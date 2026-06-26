@@ -14,7 +14,7 @@ const projects = [
   summaristProject,
   ultraverseProject,
   flixReactProject,
-  { ...flixReactProject, title: 'Skintristic', description: 'An AI-powered skincare experience focused on helping users discover routines and products with a clean, modern interface, personalized recommendations, and a smooth end-to-end user journey.', tech: ['React', 'Next.js', 'Tailwind CSS', 'Vercel'], link: 'https://skintristic.vercel.app/' },
+  { ...flixReactProject, title: 'Skintristic', description: 'An AI-powered skincare experience focused on helping users discover routines and products with a clean, modern interface, personalized recommendations, and a smooth end-to-end user journey.', tech: ['React', 'Next.js', 'Tailwind CSS', 'Vercel'], link: 'https://skintristic.vercel.app/', image: '/Skintristic.png?v=8' },
 ];
 
 const projectImageStyle = {
@@ -105,7 +105,7 @@ export default function ProjectsGrid() {
                   src={project.image}
                   alt={project.title}
                   className={styles.image}
-                  style={projectImageStyle}
+                  style={{ ...projectImageStyle, ...(project.imageStyle || {}) }}
                 />
                 <div className={styles.imageOverlay} />
               </div>
